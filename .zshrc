@@ -5,6 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Applies workaround for color support of ls on dirs that are other-writable (o+x) and not sticky, making them readable
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 # POWERLEVEL9K SETTINGS
 POWERLEVEL9K_MODE='nerdfont-complete'
 
