@@ -19,6 +19,7 @@ POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='green'
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='black'
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND='black'
 #POWERLEVEL9K_OS_ICON_BACKGROUND='166'
+#POWERLEVEL9K_OS_ICON_FOREGROUND='white'
 
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
@@ -51,6 +52,38 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# Functions
+glog() {
+	setterm -linewrap off
+
+	git --no-pager log --all --color=always --graph --abbrev-commit --decorate \
+	--format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' | \
+		sed -E \
+		-e 's/\|(\x1b\[[0-9;]*m)+\\(\x1b\[[0-9;]*m)+ /├\1─╮\2/' \
+		-e 's/(\x1b\[[0-9;]+m)\|\x1b\[m\1\/\x1b\[m /\1├─╯\x1b\[m/' \
+		-e 's/\|(\x1b\[[0-9;]*m)+\\(\x1b\[[0-9;]*m)+/├\1╮\2/' \
+		-e 's/(\x1b\[[0-9;]+m)\|\x1b\[m\1\/\x1b\[m/\1├╯\x1b\[m/' \
+		-e 's/╮(\x1b\[[0-9;]*m)+\\/╮\1╰╮/' \
+		-e 's/╯(\x1b\[[0-9;]*m)+\//╯\1╭╯/' \
+		-e 's/(\||\\)\x1b\[m   (\x1b\[[0-9;]*m)/╰╮\2/' \
+		-e 's/(\x1b\[[0-9;]*m)\\/\1╮/g' \
+		-e 's/(\x1b\[[0-9;]*m)\//\1╯/g' \
+		-e 's/^\*|(\x1b\[m )\*/\1⎬/g' \
+		-e 's/(\x1b\[[0-9;]*m)\|/\1│/g' \
+		| command less -r +'/[^/]HEAD'
+
+	setterm -linewrap on
+}
+
+find() {
+	if [ $# = 1 ];
+	then
+		command find . -iname "*$@*"
+	else
+		command find "$@"
+	fi
+}
 
 # Customize to your needs...
 if [ -f /usr/local/bin/neofetch ]; then neofetch; fi
