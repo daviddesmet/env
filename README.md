@@ -4,7 +4,7 @@ My personal environment variables
 ## Prerequisites
 
 - Zsh
-- [Prezto](https://raw.githubusercontent.com/sorin-ionescu/prezto)
+- [Prezto](https://github.com/sorin-ionescu/prezto)
 - [Homebrew (Mac)](https://brew.sh/)
 
 ## Installation
