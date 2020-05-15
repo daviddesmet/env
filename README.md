@@ -21,6 +21,12 @@ sudo apt install zsh
 brew install zsh zsh-completions
 ```
 
+### Install Prezto
+
+```bash
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
 #### Set Zsh as default shell
 
 ```console
