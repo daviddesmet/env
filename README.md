@@ -36,6 +36,29 @@ done
 
 #### Set Zsh as default shell
 
-```console
+```bash
 chsh -s /bin/zsh
+```
+
+#### Install nvm, node.js, npm, and yarn
+
+Check the GitHub project page for the latest release of [NVM](https://github.com/nvm-sh/nvm).
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v{version}/install.sh | bash
+```
+
+```bash
+nvm install --lts
+nvm ls
+```
+
+```bash
+npm install -g yarn
+```
+
+#### Install Vue CLI
+
+```bash
+yarn global add @vue/cli
 ```
