@@ -5,6 +5,7 @@ My personal environment variables
 
 - Zsh
 - [Prezto](https://github.com/sorin-ionescu/prezto)
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Homebrew (Mac)](https://brew.sh/)
 
 ## Installation
@@ -61,4 +62,12 @@ npm install -g yarn
 
 ```bash
 yarn global add @vue/cli
+```
+
+#### Misc
+
+Display how the different colors look in the terminal:
+
+```bash
+for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 ```
