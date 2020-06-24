@@ -342,7 +342,7 @@
   # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   typeset -g POWERLEVEL9K_SHOW_CHANGESET=true
-  typeset -g POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+  typeset -g POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 
   typeset -g POWERLEVEL9K_VCS_GIT_ICON=''
   typeset -g POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
@@ -388,6 +388,12 @@
 
     local res
     local where  # branch or tag
+    
+    # Show commit hash
+    if [[ -n $POWERLEVEL9K_SHOW_CHANGESET ]] then
+      res+=" ${VCS_STATUS_COMMIT[1,7]} "
+    fi
+    
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       res+="${clean}${(g::)POWERLEVEL9K_VCS_BRANCH_ICON}"
       where=${(V)VCS_STATUS_LOCAL_BRANCH}
