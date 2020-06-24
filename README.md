@@ -1,9 +1,9 @@
 # env
-My personal environment variables
+My personal environment variables.
 
 ## Prerequisites
 
-- Zsh
+- [Zsh](https://en.wikipedia.org/wiki/Z_shell)
 - [Prezto](https://github.com/sorin-ionescu/prezto)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Homebrew (Mac)](https://brew.sh/)
