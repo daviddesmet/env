@@ -350,16 +350,16 @@
   typeset -g POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '             # 
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '               # 
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25cf'           # ●
+  # typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25cf'           # ●
 
-  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'              # ±
-  typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'            # ±
-  typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'    # ↓
-  typeset -g POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'    # ↑
+  # typeset -g POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'              # ±
+  # typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'            # ±
+  # typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'    # ↓
+  # typeset -g POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'    # ↑
 
   # Formatter for Git status.
   #
