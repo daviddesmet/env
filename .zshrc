@@ -14,49 +14,6 @@ if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# POWERLEVEL9K SETTINGS
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_STRATEGY='truncate_middle'
-
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator ssh dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
-
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='green'
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='black'
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND='black'
-#POWERLEVEL9K_OS_ICON_BACKGROUND='166'
-#POWERLEVEL9K_OS_ICON_FOREGROUND='white'
-
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
-
-POWERLEVEL9K_TIME_FORMAT='%D{%T}'
-
-# Disable dir/git icons
-POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_HOME_SUB_ICON=''
-POWERLEVEL9K_FOLDER_ICON=''
-
-# Version control settings
-POWERLEVEL9K_SHOW_CHANGESET=true
-POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
-
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
-POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'		# ±
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25cf'	# ●
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'		# ±
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'	# ↓
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'	# ↑
-
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -94,12 +51,14 @@ find() {
   fi
 }
 
-# Customize to your needs...
+# Fun stuff
 if [ -f /usr/local/bin/neofetch ]; then neofetch; fi
 
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
