@@ -391,7 +391,7 @@
     
     # Show commit hash
     if [[ -n $POWERLEVEL9K_SHOW_CHANGESET ]] then
-      res+=" ${VCS_STATUS_COMMIT[1,7]} "
+      res+=" ${VCS_STATUS_COMMIT[1,${POWERLEVEL9K_CHANGESET_HASH_LENGTH}]} "
     fi
     
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
