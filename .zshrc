@@ -42,14 +42,14 @@ glog() {
   setterm -linewrap on
 }
 
-find() {
-  if [ $# = 1 ];
-  then
-    command find . -iname "*$@*"
-  else
-    command find "$@"
-  fi
-}
+#find() {
+#  if [ $# = 1 ];
+#  then
+#    command find . -iname "*$@*"
+#  else
+#    command find "$@"
+#  fi
+#}
 
 # Fun stuff
 if [ -f /usr/local/bin/neofetch ]; then neofetch; fi
