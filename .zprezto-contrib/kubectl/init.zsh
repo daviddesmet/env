@@ -8,6 +8,7 @@ if (( ! ${+commands[kubectl]} )); then
 fi
 
 # Enable completion for 'kubectl'.
+#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 cache_file="${0:h}/cache.zsh"
 kubectl_command="${commands[kubectl]}"
 
