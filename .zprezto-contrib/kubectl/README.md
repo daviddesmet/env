@@ -23,6 +23,7 @@
 ## Aliases
 
 - `kc` is an alias for `kubectl`
+- `kaf` is an alias for `kubectl apply -f`
 - `kd` is an alias for `kubectl describe`
 - `kdno` is an alias for `kubectl describe nodes`
 - `kdns` is an alias for `kubectl describe namespaces`
@@ -40,6 +41,6 @@
 - `kgs` is an alias for `kubectl get service`
 - `klo` is an alias for `kubectl logs -f`
 - `kp` is an alias for `kubectl proxy`
+- `kpf` is an alias for `kubectl port-forward`
 - `klo` is an alias for `kubectl delete`
 - `krmpo` is an alias for `kubectl delete pods`
-- `kpf` is an alias for `kubectl port-forward`
