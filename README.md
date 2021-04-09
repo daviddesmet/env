@@ -41,6 +41,12 @@ done
 chsh -s /bin/zsh
 ```
 
+#### Install kubectl
+
+```bash
+brew install kubectl
+```
+
 #### Install kubectl plugins
 
 Follow instructions to [install Krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
