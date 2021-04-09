@@ -42,5 +42,5 @@
 - `klo` is an alias for `kubectl logs -f`
 - `kp` is an alias for `kubectl proxy`
 - `kpf` is an alias for `kubectl port-forward`
-- `klo` is an alias for `kubectl delete`
+- `krm` is an alias for `kubectl delete`
 - `krmpo` is an alias for `kubectl delete pods`
