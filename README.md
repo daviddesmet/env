@@ -47,7 +47,16 @@ Follow instructions to [install Krew](https://krew.sigs.k8s.io/docs/user-guide/s
 
 ```bash
 kubectl krew install ctx
+kubectl krew install ns
 kubectl krew install tree
+```
+
+#### Install fzf
+
+[fzf](https://github.com/junegunn/fzf) is a general-purpose command-line fuzzy finder.
+
+```bash
+brew install fzf
 ```
 
 #### Install nvm, node.js, npm, and yarn
