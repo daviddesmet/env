@@ -41,6 +41,15 @@ done
 chsh -s /bin/zsh
 ```
 
+#### Install kubectl plugins
+
+Follow instructions to [install Krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/).
+
+```bash
+kubectl krew install ctx
+kubectl krew install tree
+```
+
 #### Install nvm, node.js, npm, and yarn
 
 Check the GitHub project page for the latest release of [NVM](https://github.com/nvm-sh/nvm).
