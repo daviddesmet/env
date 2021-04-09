@@ -40,6 +40,8 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'git' \
   'kubectl' \
+  'terraform' \
+  'helm' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
