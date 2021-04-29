@@ -55,6 +55,7 @@ Follow instructions to [install Krew](https://krew.sigs.k8s.io/docs/user-guide/s
 kubectl krew install ctx
 kubectl krew install ns
 kubectl krew install tree
+kubectl krew install score
 ```
 
 #### Install fzf
