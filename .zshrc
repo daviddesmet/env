@@ -51,6 +51,9 @@ glog() {
 #  fi
 #}
 
+# Kubectl Krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # Fun stuff
 if [ -f /usr/local/bin/neofetch ]; then neofetch; fi
 
