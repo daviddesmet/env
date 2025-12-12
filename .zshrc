@@ -1,3 +1,8 @@
+# If JetBrains is reading env, keep it minimal and silent
+if [[ -n "$INTELLIJ_ENVIRONMENT_READER" ]]; then
+  return
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -10,8 +15,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Applies workaround for color support of ls on dirs that are other-writable (o+x) and not sticky, making them readable
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [[ -o interactive ]]; then
+  if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  fi
 fi
 
 # Source Prezto.
@@ -51,11 +58,10 @@ glog() {
 #  fi
 #}
 
-# Kubectl Krew
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 # Fun stuff
-if [ -f /usr/local/bin/neofetch ]; then neofetch; fi
+if [[ -o interactive ]] && [[ -f /opt/homebrew/bin/neofetch ]]; then
+  neofetch
+fi
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
@@ -67,10 +73,6 @@ FNM_PATH="/opt/homebrew/opt/fnm/bin"
 if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
-
-# .NET Tools
-path+=("$HOME/.dotnet/tools")
-export PATH
 
 # Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
