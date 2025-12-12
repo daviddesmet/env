@@ -90,6 +90,21 @@ npm install -g yarn
 yarn global add @vue/cli
 ```
 
+#### .zprofile
+
+Update `.zprofile` with:
+
+```
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Kubectl Krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# .NET Tools
+export PATH="$HOME/.dotnet/tools:$PATH"
+```
+
 #### Misc
 
 Display how the different colors look in the terminal:
