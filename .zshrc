@@ -63,6 +63,9 @@ if [[ -o interactive ]] && [[ -f /opt/homebrew/bin/neofetch ]]; then
   neofetch
 fi
 
+# Claude Code & others
+export PATH="$HOME/.local/bin:$PATH"
+
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -73,6 +76,13 @@ FNM_PATH="/opt/homebrew/opt/fnm/bin"
 if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
+
+# bun completions
+[ -s "/Users/daviddesmet/.bun/_bun" ] && source "/Users/daviddesmet/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
