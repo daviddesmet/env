@@ -66,6 +66,10 @@ fi
 # Claude Code & others
 export PATH="$HOME/.local/bin:$PATH"
 
+ccs() {
+  "$HOME/.local/bin/ccswitch.zsh" --switch "$@"
+}
+
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -87,3 +91,31 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Quick edits
+alias reload='source ~/.zshrc'
+
+# Development shortcuts
+alias tree='tree -C'      # Colourized tree
+
+# Modern replacements (install via brew/apt/etc first)
+# brew install bat
+# brew install htop
+# brew install dust
+# brew install duf
+alias cat='bat'           # Better cat with syntax highlighting
+alias top='htop'          # Better top
+alias du='dust'           # Better du
+alias df='duf'            # Better df
+
+alias versions='
+  echo "🟣 .NET: $(dotnet --version)" && 
+  echo "🦀 Rust: $(rustc --version)" && 
+  echo "📦 cargo: $(cargo --version)" && 
+  echo "☁️ Azure: $(az version)" && 
+  echo "✨ Aspire: $(aspire --version)" && 
+  echo "☁️ AZD: $(azd version)" && 
+  echo "🟩 Node.js: $(node --version)" && 
+  echo "📦 pnpm: $(pnpm --version)" && 
+  echo "🐳 Docker: $(docker --version)"
+'
