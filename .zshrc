@@ -112,6 +112,13 @@ alias top='htop'          # Better top
 alias du='dust'           # Better du
 alias df='duf'            # Better df
 
+# Modern ls alternative; it feels faster, clean, and has nice Git integration
+# brew install eza
+alias ls='eza --icons=auto --group-directories-first'
+alias ll='eza -lah --icons=auto --git --group-directories-first'
+alias la='eza -a --icons=auto --group-directories-first'
+alias lt='eza --tree --icons=auto --level=2 --group-directories-first'
+
 alias versions='
   echo "🟣 .NET: $(dotnet --version)" && 
   echo "🦀 Rust: $(rustc --version)" && 
