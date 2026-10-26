@@ -92,6 +92,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 path+=("$HOME/.dotnet/tools")
 export PATH
 
+# direnv - per-directory env (the Jira tooling lives in ~/Code/{CompanyName}/.envrc)
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
